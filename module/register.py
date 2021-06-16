@@ -34,7 +34,7 @@ def insert_new_user_data(email, password, name):
         return jsonify(
             {
                 'messages': 'failed create account',
-                'location': '/login',
+                'location': '/register',
                 'error': f'{e}'
             }
         ), 201
