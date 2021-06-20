@@ -1,4 +1,4 @@
-from module import register
+from module import register, login
 
 from functools import wraps
 
@@ -45,7 +45,16 @@ def register_api():
     password = request.json.get('password', None)
     name = request.json.get('name', None)
     return register.register_data(email, password, name)
+    
 
+@app.route('/api/v1/login', methods=['GET'])
+@check_register_param_complete
+@cross_origin()
+def login_api():
+    email = request.json.get('email', None)
+    password = request.json.get('password', None)
+    name = request.json.get('name', None)
+    return login.login_data(email, password, name)
 
 if __name__ == '__main__':
     app.run()

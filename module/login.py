@@ -42,7 +42,7 @@ def check_data_is_exist(email, password, name):
 #         ), 201
 
 
-def register_data(email, password, name):
+def login_data(email, password, name):
     if check_data_is_exist(email,password,name):
         try:
             return jsonify(
