@@ -48,7 +48,6 @@ def register_api():
     
 
 @app.route('/api/v1/login', methods=['POST'])
-@check_register_param_complete
 @cross_origin()
 def login_api():
     email = request.json.get('email', None)
