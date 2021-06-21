@@ -10,9 +10,8 @@ from flask_cors import cross_origin
 from flask_cors import CORS
 
 app = Flask(__name__)
-
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def check_register_param_complete(f):
     @wraps(f)
