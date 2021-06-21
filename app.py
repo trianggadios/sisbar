@@ -47,14 +47,13 @@ def register_api():
     return register.register_data(email, password, name)
     
 
-@app.route('/api/v1/login', methods=['GET'])
+@app.route('/api/v1/login', methods=['POST'])
 @check_register_param_complete
 @cross_origin()
 def login_api():
     email = request.json.get('email', None)
     password = request.json.get('password', None)
-    name = request.json.get('name', None)
-    return login.login_data(email, password, name)
+    return login.login_data(email, password)
 
 if __name__ == '__main__':
     app.run()
