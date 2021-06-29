@@ -13,7 +13,7 @@ def vertikal():
 def horizontal():
     conn = db_connect()
     cur = conn.cursor()
-    cur.execute(f"SELECT * FROM public.barang WHERE public.barang.lokasi_barang = 'A1'")
+    cur.execute("SELECT public.barang.nama_barang, public.barang.lokasi_barang, public.rak.rak_lokasi, public.barang.kategori_barang FROM public.barang INNER JOIN public.rak ON public.barang.rak_lokasi_barang = public.rak.'id'")
     data = cur.fetchall()
     cur.close()
     conn.close()
