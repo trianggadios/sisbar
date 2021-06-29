@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragmentasi Data</title>
+</head>
+<body>
+    <h2>Fragmentasi Vertical</h2>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>Nama Barang</th>
+                <th>Kategori Barang</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in data_vertical %}
+            <tr>
+                {% for j in i %}
+                <td>{{ j }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Fragmentasi Horizontal</h2>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>ID Barang</th>
+                <th>Nama Barang</th>
+                <th>Lokasi Barang</th>
+                <th>Rak Lokasi</th>
+                <th>Kategori Barangw</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in data_horizontal %}
+            <tr>
+                {% for j in i %}
+                <td>{{ j }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Fragmentasi Campuran</h2>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>Nama Barang</th>
+                <th>Kategori Barang</th>
+                <th>Lokasi Barang</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in data_campuran %}
+            <tr>
+                {% for j in i %}
+                <td>{{ j }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
